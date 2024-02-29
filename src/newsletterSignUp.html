@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Signup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    #validation-message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+  <link rel="stylesheet" href=".\css\style.css">
+</head>
+
+<body>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="notes.html">Notes</a>
+    <a href="#">Newsletter</a>
+  </nav>
+  <main class="content">
+    <section class="header">
+      <h2>Signup for our newsletter</h2>
+    </section>
+    
+    <section class="section">
+      <form id="emailForm" onsubmit="validateEmail(); return false;">
+        <label for="email">Enter your email:</label>
+        <input id="email" name="email" required>
+        <br>
+        <span id="validation-message"></span>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+
+    <section class="section">
+
+      <h3>Have some fun, select an image!</h3>
+
+      <form>
+        <label for="imageType">Choose an image type:</label>
+        <select id="imageType" onchange="changeImage()">
+          <option value="guitar">Random Guitar Image</option>
+          <option value="dog">Random Dog Image</option>
+        </select>
+      </form>
+    
+      <div id="imageContainer">
+        <!-- The selected image will be displayed here -->
+      </div>
+    
+      <script src="./js/randomImage.js"></script>
+    </section>
+  </main>
+
+  <script src="./js/validateEmail.js"></script>
+
+</body>
+
+</html>
